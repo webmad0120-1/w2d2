@@ -1,0 +1,32 @@
+#overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url("833.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* background-size: 200px 200px; */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0;
+    /* as per http://easings.net/ */
+    transition: opacity 1.5s ease-in;
+    display: none;
+}
+
+#ball {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background: radial-gradient(#f00, #333);
+    border-radius: 50%;
+    top: calc(50vh - 100px);
+    left: 0;
+}
+
+button, input {
+    font-size: 40px;
+    margin-right: 20px;
+}

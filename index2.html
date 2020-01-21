@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        background: radial-gradient(#f00, #333);
+        border-radius: 50%;
+        top: calc(50vh - 100px);
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ball"></div>
+    <script>
+      // this won't work as for loops have a synchronous nature in js
+      // for (let posX = 0; posX < 1200; posX++) {
+      //     // console.log(posX)
+      // document.querySelector("#ball").style.left = `${posX}px`
+      // }
+
+      let posX = 0;
+      let posXLimit = 1200;
+
+      let intervalID = setInterval(() => {
+        document.querySelector("#ball").style.left = `${(posX += 10)}px`;
+
+        if (posX > posXLimit) {
+          document.querySelector("#ball").style.left = `${posXLimit}px`;
+          clearInterval(intervalID);
+        }
+      }, 10);
+    </script>
+  </body>
+</html>
