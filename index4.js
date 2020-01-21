@@ -5,9 +5,10 @@ function sayHelloNTimes(nTimes, cb) {
 
   function sayHello() {
     counter++;
+    
     console.log("hello guys!");
-
-    if (counter === nTimes) {
+    debugger
+    if (counter > nTimes) {
         clearInterval(intervalID)
         cb()
     };
